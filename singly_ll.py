@@ -39,8 +39,19 @@ class LinkedList:
 
     # Method to append a new node
     def add_node(self, data:any=None):
-        pass    
+        """
+        Following function will append a new node to the existing list
 
+        Args:
+            data (any, optional): Data which will be present in the new node. Defaults to None.
+        """
+        new_node = Node(data)
+        node = self.head
+        while node.next_node:
+            node = node.next_node
+        node.next_node = new_node
+        self.tail = new_node
+    
 
     # Method to insert a new node
     def insert_node(self, position:int=-1, data:any=None):
