@@ -55,7 +55,28 @@ class LinkedList:
 
     # Method to insert a new node
     def insert_node(self, position:int=-1, data:any=None):
-        pass
+        """
+        Following function will create a new node and insert it at the passed postion
+
+        Args:
+            position (int, optional): Position at which we need to insert data. Defaults to -1.
+            data (any, optional): Data which will be present in the new node. Defaults to None.
+
+        Raises:
+            Exception: If the position is not provided an Exception will be raised
+        """
+        if position == -1: raise Exception("No position provided for insertion")
+        new_node = Node(data=data)
+        node = self.head
+        node_count = 1
+        while node.next_node:
+            node = node.next_node
+            node_count += 1
+            if node_count+1 == position:
+                break
+        temp_node = node.next_node
+        node.next_node = new_node
+        new_node.next_node = temp_node
 
 
     # Method to remove node at a position
