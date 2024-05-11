@@ -91,8 +91,19 @@ class LinkedList:
     
     # Method to display the created list in CMD
     def display(self, alignment:str='h'):
-        pass
-
+        """
+        Method to display the linked list
+        """
+        if alignment not in ['h', 'v'] : 
+            print('Please choose alignment from {h}-horizontal and {v}-vertical')
+            return
+        node = self.head
+        arrow = DOWN_ARROW_CHAR if alignment.lower() == 'v' else SIDE_ARROW_CHAR
+        if node.data is None and node.next_node is None : print(f"Linked List empty")
+        while node:
+            print(f"{node.data}{arrow if node.next_node else ''}", end='' if alignment.lower() == 'h' else '\n')
+            node = node.next_node
+        if alignment.lower() == 'h':print()
 
     # Method to find the nth element
     def find_n_element(self):
