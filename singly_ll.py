@@ -120,7 +120,7 @@ def main():
     l_list.display()
     l_list.insert_node(position=3, data=25)
     print(f"After Insertion -> ")
-    l_list.display(alignment='a')
+    l_list.display(alignment='v')
 
 
 if __name__ == "__main__":
