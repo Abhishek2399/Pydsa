@@ -108,3 +108,20 @@ class LinkedList:
     # Method to find the nth element
     def find_n_element(self):
         pass
+
+
+def main():
+    l_list = LinkedList(11)
+    l_list.add_node(17)
+    l_list.add_node(19)
+    l_list.add_node(21)
+    l_list.add_node(23)
+    print(f"Before Insertion -> ")
+    l_list.display()
+    l_list.insert_node(position=3, data=25)
+    print(f"After Insertion -> ")
+    l_list.display(alignment='a')
+
+
+if __name__ == "__main__":
+    main()
